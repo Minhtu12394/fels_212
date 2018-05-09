@@ -8,11 +8,11 @@ default: &default
 development:
   <<: *default
   database: <%= ENV["DEVELOPMENT"] %>
-  
+
 test:
   <<: *default
-  database: <%= ENV["TEST"] %> 
+  database: <%= ENV["TEST"] %>
 
 production:
   <<: *default
-  database: <%= ENV["PRODUCTION"] %> 
+  database: <%= ENV["PRODUCTION"] %>
