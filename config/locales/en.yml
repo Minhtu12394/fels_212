@@ -1,5 +1,6 @@
 en:
   title: "Framgia E-Learning System"
+  account: "Account"
   sign_up: "Sign up"
   log_out: "Log out"
   log_in: "Log in"
@@ -13,3 +14,8 @@ en:
   details: "Details"
   un_happy: "Unhappy?"
   not_found: "Can't found this category"
+  following: "Following"
+  followers: "Followers"
+  unfollow: "unfollow"
+  follow: "follow"
+  my_profie: "My profile"

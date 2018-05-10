@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def following? other_user
     following.include? other_user
   end
+
+  def current_user? user
+    user == current_user
+  end
 end

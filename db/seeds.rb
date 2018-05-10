@@ -27,3 +27,10 @@ end
       Answer.create!(content: Faker::Lorem.word, word_id: word.id, correct: false)
   end
 end
+
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
