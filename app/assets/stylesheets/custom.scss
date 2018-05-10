@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "color";
+
 body {
   padding-top: 60px;
 }
@@ -48,18 +49,18 @@ p {
   line-height: 1.7em;
 }
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
+.logo {
   color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
+  float: left;
+  font-size: 1.7em;
   font-weight: bold;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
+  text-transform: uppercase;
 }
 
-#logo:hover {
+.logo:hover {
   color: white;
   text-decoration: none;
 }
