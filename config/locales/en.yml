@@ -1,4 +1,5 @@
 en:
-  sign_up: "Sign Up"
-  log_in: "Log in"
-  home: "Home"
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign Up"
