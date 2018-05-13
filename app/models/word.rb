@@ -1,7 +1,7 @@
 class Word < ApplicationRecord
   belongs_to :category
   has_many :answers
+  accepts_nested_attributes_for :answers
   has_many :results, dependent: :destroy
-
-  validates :meaning, presence: true
+  scope :order_date_desc, ->{order created_at: :desc}
 end
