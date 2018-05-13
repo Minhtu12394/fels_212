@@ -3,12 +3,13 @@
     <%= link_to "Framgia E-Learning System", root_path, class: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("home"), root_path %></li>
+        <li><%= link_to t(:home), root_path %></li>
         <% if user_signed_in?  %>
-            <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to t(:log_out), destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to t(:categories), categories_path %></li>
         <% else %>
-            <li><%= link_to t("log_in"), new_user_session_path %></li>
-            <li><%= link_to t("sign_up"), new_user_registration_path %></li>
+            <li><%= link_to t(:log_in), new_user_session_path %></li>
+            <li><%= link_to t(:sign_up), new_user_registration_path %></li>
         <% end %>
       </ul>
     </nav>
