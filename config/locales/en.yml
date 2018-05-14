@@ -1,5 +1,15 @@
 en:
-  devise:
-    registrations:
-      new:
-        sign_up: "Sign Up"
+  title: "Framgia E-Learning System"
+  sign_up: "Sign up"
+  log_out: "Log out"
+  log_in: "Log in"
+  edit: "Edit"
+  update: "Update"
+  back: "Back"
+  sure: "Are you sure? "
+  delete_acc: "Delete my account"
+  home: "Home"
+  categories: "Categories"
+  details: "Details"
+  un_happy: "Unhappy?"
+  not_found: "Can't found this category"
