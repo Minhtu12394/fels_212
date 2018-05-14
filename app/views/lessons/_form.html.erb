@@ -1,12 +1,22 @@
-<h1><%= t :lesson %></h1>
+<h1><%= t :lesson %> <%= @lesson.id %></h1>
 <b><%= t :category %></b>
 <%= category_name @lesson %> <br>
 <b><%= t :total_word %></b>
-<%= num_of_word @lesson %>
+<%= num_of_word @lesson %> <br>
+<b><%= t :correct_answer %></b>
+<%= count_correct_answer @lesson %> / <%= total_word_in_lesson @lesson %>
+<%= t :word %>
 
 <%= form_for @lesson do |f| %>
+  <%= f.hidden_field :learned, value: true %>
   <%= f.fields_for :results do |result| %>
     <%= render "question", f: result %>
   <% end %>
-  <%= f.submit (t :submit), class: "btn btn-primary" %>
+  <% if @lesson.learned %>
+      <%= link_to t(:back), @lesson.category, class: "btn btn-primary" %>
+  <% else %>
+    <div class="col-sm-2">
+      <%= f.submit t(:finish), class: "btn btn-primary", data: {confirm: t(:save_answer)} %>
+    </div>
+  <% end %>
 <% end %>

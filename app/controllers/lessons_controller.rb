@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
     @lesson = @category.lessons.build user_id: current_user.id
     if @lesson.save
       flash[:success] = t :create_lesson_success
-      redirect_to @lesson
+      redirect_to @lesson.category
     else
       flash[:danger] = @lesson.errors.full_messages.join(", ")
       redirect_to categories_path
@@ -23,21 +23,30 @@ class LessonsController < ApplicationController
       flash[:success] = t :update_success
     else
       flash[:danger] = t :update_fail
-      redirect_to @category
     end
+    redirect_to @lesson.category
+  end
+
+  def destroy
+    if @lesson.destroy
+      flash[:success] = t :destroy_lesson
+    else
+      flash[:danger] = t :destroy_lesson_fail
+    end
+    redirect_to @lesson.category
   end
 
   private
 
   def lesson_params
-    params.require(:lesson).permit results_attributes: [:id, :answer_id]
+    params.require(:lesson).permit :learned, results_attributes: [:id, :answer_id]
   end
 
   def load_lesson
     @lesson = Lesson.find_by id: params[:id]
     return if @lesson
     flash[:warning] = t :not_found
-    redirect_to lessons_path
+    redirect_to categories_path
   end
 
   def load_category
