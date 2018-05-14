@@ -1,0 +1,12 @@
+<h1><%= t :lesson %></h1>
+<b><%= t :category %></b>
+<%= category_name @lesson %> <br>
+<b><%= t :total_word %></b>
+<%= num_of_word @lesson %>
+
+<%= form_for @lesson do |f| %>
+  <%= f.fields_for :results do |result| %>
+    <%= render "question", f: result %>
+  <% end %>
+  <%= f.submit (t :submit), class: "btn btn-primary" %>
+<% end %>
