@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @q = Category.search params[:q]
-    @categories = @q.result.order_date_desc.page(params[:page]).per(Settings.cate_perpage)
+    @categories = @q.result.order_date_desc.page(params[:page]).per Settings.cate_perpage
   end
 
   def show
