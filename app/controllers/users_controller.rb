@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: %i(show following followers)
+  before_action :load_user, only: %i(show following followers)
   def show
     @unfollow_user = current_user.active_relationships.find_by followed_id: @user.id
     @follow_user = current_user.active_relationships.build
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def find_user
+  def load_user
     @user = User.find_by id: params[:id]
     return if @user
     flash[:warning] = t :not_found
