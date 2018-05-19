@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :lessons, only: %i(show update)
   resources :words, only: %i(index)
   devise_for :users
-  resources :users, only: %i(show) do
+  resources :users, only: %i(show index) do
     member do
       get :following, :followers
     end

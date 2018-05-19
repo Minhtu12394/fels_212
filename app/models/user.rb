@@ -18,6 +18,8 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
 
+  scope :order_date_desc, ->{order created_at: :desc}
+
   def follow other_user
     following << other_user
   end

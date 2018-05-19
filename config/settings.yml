@@ -5,3 +5,4 @@ ava_size: 50
 cate_per_page: 6
 word_limit: 10
 word_per_page: 10
+user_per_page: 10
