@@ -65,3 +65,5 @@ en:
   open: "Open"
   destroy_lesson: "Deleted Lesson deleted"
   destroy_lesson_fail: "Delete lesson fail"
+  search_by_name: "Search by name"
+  search: "Search"
