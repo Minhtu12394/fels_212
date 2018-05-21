@@ -1,0 +1,19 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <%= f.label :meaning %>
+  <%= f.text_field :meaning, class: "form-control" %>
+
+  <%= f.label :category %>
+  <%= f.collection_select :category_id, @category, :id, :name, class: "form-control" %>
+  <br>
+
+  <%= f.label :answers %>
+  <%= f.fields_for :answers do |builder| %>
+    <%= render "answer_fields", f: builder %>
+  <% end %>
+
+  <p><%= link_to_add_fields (t :add_answer), f, :answers %></p>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

@@ -6,4 +6,5 @@ class Category < ApplicationRecord
   validates :description, length: {maximum: Settings.category_des}
 
   scope :order_date_desc, ->{order created_at: :desc}
+
 end
