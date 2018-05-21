@@ -1,0 +1,9 @@
+<tr>
+  <td><%= word.content %></td>
+  <td><%= word.category.name %></td>
+  <% if word.answers.any? %>
+    <td><%= correct_answer word %></td>
+  <% else %>
+    <td><%= t :na %></td>
+  <% end %>
+</tr>
