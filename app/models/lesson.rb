@@ -8,6 +8,8 @@ class Lesson < ApplicationRecord
   before_create :create_word
   validate :words_quantity, on: :create
 
+  scope :start_by, ->user_id{where user_id: user_id}
+
   private
 
   def create_word
@@ -19,4 +21,5 @@ class Lesson < ApplicationRecord
       errors.add :error, I18n.t(:not_enough_word)
     end
   end
+
 end

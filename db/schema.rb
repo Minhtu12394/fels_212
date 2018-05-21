@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2018_05_10_120234) do
   end
 
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.integer "status"
+    t.boolean "learned", default: false
     t.bigint "user_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false

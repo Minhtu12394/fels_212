@@ -5,7 +5,10 @@ class CategoriesController < ApplicationController
     @categories = Category.order_date_desc.page(params[:page]).per Settings.cate_per_page
   end
 
-  def show; end
+  def show
+    @lessons = @category.lessons.includes(:answers, :results).
+      start_by(current_user).order(created_at: :desc)
+  end
 
   private
   def load_category
