@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(show following followers)
+
+  def index
+    @users = User.order_date_desc.page(params[:page]).per Settings.user_per_page
+  end
+
   def show
     @unfollow_user = current_user.active_relationships.find_by followed_id: @user.id
     @follow_user = current_user.active_relationships.build

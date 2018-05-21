@@ -67,3 +67,5 @@ en:
   destroy_lesson_fail: "Delete lesson fail"
   search_by_name: "Search by name"
   search: "Search"
+  not_enough_word: ": This category has not enough word, can't start lesson"
+  all_users: "All users"
