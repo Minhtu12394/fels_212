@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships, only: %i(create destroy)
+  namespace :admin do
+    root "categories#index"
+    resources :categories
+  end
 end
 
