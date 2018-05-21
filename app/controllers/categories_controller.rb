@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
   before_action :load_category, only: %i(show)
 
   def index
-    @categories = Category.order_date_desc.page(params[:page]).per Settings.cate_per_page
+    @q = Category.search params[:q]
+    @categories = @q.result.order_date_desc.page(params[:page]).per(Settings.cate_perpage)
   end
 
   def show
