@@ -1,4 +1,3 @@
-
 <h1 class="text-center"><%= t :all_lesson %></h1>
 
 <table class="table table-hover">
@@ -8,5 +7,5 @@
     <th><%= t :score %></th>
     <th></th>
   </tr>
-  <%= render @lessons %>
+  <%= render partial: @lessons, collection: @lessons %>
 </table>

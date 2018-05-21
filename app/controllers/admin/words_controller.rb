@@ -1,6 +1,6 @@
 class Admin::WordsController < ApplicationController
   before_action :load_word, only: %i(edit update destroy)
-  before_action :select_category, only: %i(new edit create)
+  before_action :select_category, except: %i(index destroy)
 
   def index
     @q = Word.search(params[:q])
@@ -19,7 +19,8 @@ class Admin::WordsController < ApplicationController
       flash[:success] =  t :successfully_created_word
       redirect_to admin_words_path
     else
-      flash[:danger] = t :fail_created_word
+
+      flash[:danger] = @word.errors.full_messages.join(", ")
       render :new
     end
   end
@@ -29,7 +30,7 @@ class Admin::WordsController < ApplicationController
       flash[:success] = t :successfully_updated_word
       redirect_to admin_words_path
     else
-      flash[:danger] = t :fail_to_update_word
+      flash[:danger] = @word.errors.full_messages.join(", ")
       render :edit
     end
   end
