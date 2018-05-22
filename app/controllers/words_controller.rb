@@ -8,6 +8,6 @@ class WordsController < ApplicationController
     else
       @words = Word.all
     end
-    @words = @words.includes(:category, :answers).page(params[:page]).per Settings.word_per_page
+    @words = @words.order_by_name.includes(:category, :answers).page(params[:page]).per Settings.word_per_page
   end
 end

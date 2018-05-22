@@ -16,6 +16,8 @@ class LessonsController < ApplicationController
       flash[:danger] = @lesson.errors.full_messages.join(", ")
       redirect_to categories_path
     end
+    target_id = @lesson.id
+    Activity.create(content: :create_lesson, target_id: target_id, user_id: current_user.id)
   end
 
   def update
