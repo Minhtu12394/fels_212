@@ -96,3 +96,6 @@ en:
   follow: "You follow"
   unfollow: "You unfollow"
   create_lesson: "You create lesson "
+  you_follow: "You follow"
+  you_unfollow: "You unfollow"
+  you_create_lesson: "You create lesson "
