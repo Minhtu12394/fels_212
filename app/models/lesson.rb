@@ -9,7 +9,7 @@ class Lesson < ApplicationRecord
   validate :words_quantity, on: :create
 
   scope :start_by, ->user_id{where user_id: user_id}
-
+  scope :order_date_desc, ->{order created_at: :desc}
   private
 
   def create_word

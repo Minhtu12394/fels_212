@@ -10,7 +10,7 @@
       <div class= "radio">
         <label>
           <%= f.radio_button :answer_id, answer.id,
-            disabled: @lesson.learned %>
+            disabled: @lesson.learned, class: "choose" %>
           <% if @lesson.learned && f.object.answer == answer %>
             <%= answer.content %> &nbsp
               <% if answer.correct %>
