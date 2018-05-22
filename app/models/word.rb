@@ -14,7 +14,7 @@ class Word < ApplicationRecord
     correct = '1' and id IN (SELECT answer_id FROM results WHERE lesson_id IN (SELECT id FROM
       lessons WHERE user_id = #{user_id})))"}
   scope :order_date_desc, ->{order created_at: :desc}
-  validate :must_be_a_answer_correct, on: [:create, :update]
+  # validate :must_be_a_answer_correct, on: [:create, :update]
 
   scope :order_by_name, ->{order :content}
 

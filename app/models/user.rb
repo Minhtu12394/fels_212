@@ -18,7 +18,7 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
 
   scope :order_date_desc, ->{order created_at: :desc}
-
+  scope :order_by_email, ->{order :email}
   def follow other_user
     following << other_user
   end

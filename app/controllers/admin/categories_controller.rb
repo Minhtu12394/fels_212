@@ -2,7 +2,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :find_category, only: %i(update edit destroy)
 
   def index
-    @q = Category.search(params[:q])
+    @q = Category.search params[:q]
     @categories = @q.result.order_date_desc.page(params[:page])
       .per Settings.cate_per_page
   end

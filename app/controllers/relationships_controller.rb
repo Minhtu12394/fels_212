@@ -15,5 +15,4 @@ class RelationshipsController < ApplicationController
     Activity.create(content: :unfollow, target_id: target_id, user_id: current_user.id)
     redirect_to @user
   end
-
 end

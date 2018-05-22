@@ -19,7 +19,6 @@ class Admin::WordsController < ApplicationController
       flash[:success] =  t :successfully_created_word
       redirect_to admin_words_path
     else
-
       flash[:danger] = @word.errors.full_messages.join(", ")
       render :new
     end
