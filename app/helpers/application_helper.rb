@@ -12,4 +12,9 @@ module ApplicationHelper
    link_to name, "javascript:void(0)", onclick: "add_fields(this,\"#{association}\",
     \"#{j(fields)}\")", class: "btn btn-primary"
   end
+
+  def create_index params_page, index, per
+    params_page = 1 if params_page.nil?
+    (params_page.to_i - 1) * per.to_i + index.to_i + 1
+  end
 end

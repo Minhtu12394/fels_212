@@ -19,12 +19,13 @@
           <table class="table table-bordered" id="dataTable">
             <thead>
               <tr>
+                <th><%= t :index %></th>
                 <th><%= t :name %></th>
                 <th><%= t :action %></th>
               </tr>
             </thead>
             <tbody>
-              <%= render @categories %>
+              <%= render partial: "category" %>
             </tbody>
           </table>
         </div>
