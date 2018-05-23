@@ -93,3 +93,6 @@ en:
   remove: "Remove"
   all: "All"
   filter: "Filter"
+  follow: "You follow"
+  unfollow: "You unfollow"
+  create_lesson: "You create lesson "
