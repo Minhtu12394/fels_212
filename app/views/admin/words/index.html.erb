@@ -19,13 +19,14 @@
           <table class="table table-bordered" id="dataTable">
             <thead>
               <tr>
+                <th><%= t :index %></th>
                 <th><%= t :content %></th>
                 <th><%= t :category %></th>
                 <th><%= t :action %></th>
               </tr>
             </thead>
             <tbody>
-              <%= render @words %>
+              <%= render partial: "word" %>
             </tbody>
           </table>
         </div>
