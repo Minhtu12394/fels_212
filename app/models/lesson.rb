@@ -6,6 +6,7 @@ class Lesson < ApplicationRecord
   has_many :answers, through: :results
   accepts_nested_attributes_for :results
   before_create :create_word
+  after_create :send_mail
   validate :words_quantity, on: :create
 
   scope :start_by, ->user_id{where user_id: user_id}
@@ -22,4 +23,7 @@ class Lesson < ApplicationRecord
     end
   end
 
+  def send_mail
+    NotifyFinishLessonJob.delay(run_at: 20.seconds.from_now).perform_later(self)
+  end
 end

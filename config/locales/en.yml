@@ -105,3 +105,6 @@ en:
   deleted_user: "User deleted"
   delete_user_fail: "Delete user fail"
   create_user: "Create user"
+  subject_finish_lesson: "Remind finish lesson"
+  you_create_lesson: "You've create lesson in category "
+  for_long_time: "for longs time, please finish this lesson"
