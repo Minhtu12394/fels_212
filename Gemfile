@@ -20,6 +20,7 @@ gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
 gem "ransack"
 gem "sass-rails", "~> 5.0"
+gem "sidekiq"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 group :development, :test do

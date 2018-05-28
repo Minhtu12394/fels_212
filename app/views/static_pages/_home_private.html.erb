@@ -11,6 +11,9 @@
   </tr>
   <%= render partial: "lessons/lesson" %>
 </table>
+  <div class="text-center">
+    <%= paginate @lessons %>
+  </div>
 <div class="scrollbar">
   <% @activities.each do |activity| %>
     <ul>
