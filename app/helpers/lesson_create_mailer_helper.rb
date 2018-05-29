@@ -1,4 +1,4 @@
-module LessonsHelper
+module LessonCreateMailerHelper
   def total_word_in_lesson lesson
     lesson.words.size
   end
@@ -7,4 +7,7 @@ module LessonsHelper
     lesson.category_name
   end
 
+  def total_correct_answer word
+    word.answers.correct_answer.size
+  end
 end
