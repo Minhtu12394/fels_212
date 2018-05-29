@@ -12,11 +12,14 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new category_params
-    if @category.save
+    service = CreateCategoryService.new
+    result = service.create_category category_params
+    if result.success?
       flash[:success] = t :create_cate_succ
       redirect_to admin_categories_path
     else
+      @category = result.category
+      flash[:danger] = t :create_cate_fail
       render :new
     end
   end
