@@ -8,4 +8,8 @@ class LessonCreateMailer < ApplicationMailer
     @lesson = lesson
     mail to: lesson.user.email, subject: t(:subject_result_lesson)
   end
+
+  def notify_all_user
+    mail to: User.pluck(:email), subject: t(:subject_create_category)
+  end
 end

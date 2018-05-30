@@ -39,6 +39,7 @@ en:
   na: "N/A"
   data: "Dashboard"
   create_cate_succ: "Created category"
+  create_cate_fail: "Create category fail"
   update_cate_succ: "Category updated "
   update_cate_fail: "Category update fail"
   delete_cate: "Category deleted"
@@ -114,3 +115,4 @@ en:
   here_is_your_result: "Here is your result"
   click_to_view_detail: "Click to view detail"
   click_to_start: "Start lesson"
+  subject_create_category: "Admin create new category"
