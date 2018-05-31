@@ -72,7 +72,7 @@ p {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 75%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -130,7 +130,7 @@ input {
 }
 
 .choose {
-  margin-left: -570px !important;
+  margin-left: -430px !important;
 }
 
 .input-group-addon {
@@ -143,4 +143,42 @@ input {
   background: $white_smoke;
   overflow-y: scroll;
   margin-top: 200px;
+}
+
+input#check_box {
+  width: 100px;
+}
+
+input#answer-form {
+  width: 200px;
+  margin-right: 10px;
+  text-indent: 10px;
+}
+
+p.fields {
+  margin-top: 10px;
+}
+
+input#word_content {
+  margin-bottom: 10px;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+select#word_category_id {
+  margin-bottom: 10px;
+}
+
+input.btn.btn-primary {
+  width: 150px;
+}
+
+input#option_not_learned {
+  margin-left: 10px;
+}
+
+.form-control {
+  margin-bottom: 10px;
 }
