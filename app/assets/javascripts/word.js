@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $('body').on('click', '.btn-remove-answer', function(){
     $(this).closest('.fields').hide();
+    $(this).parent().find('.destroy').val('true');
     return false;
   })
 })
