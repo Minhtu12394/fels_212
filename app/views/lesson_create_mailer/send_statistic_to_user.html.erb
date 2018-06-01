@@ -1,0 +1,21 @@
+<%= t :hi %> <%= @user.email%>
+<%= t :content_mail_send_statistic %>
+
+<% @lessons.each do |lesson| %>
+  <table class="table table-hover">
+    <tr>
+      <th><%= t :create_at %></th>
+      <th><%= t :category %></th>
+      <th></th>
+      <th><%= t :score %></th>
+    </tr>
+    <tr>
+      <td><%= l lesson.created_at, format: :date_month %></td>
+      <td><%= category_name lesson %></td>
+      <td></td>
+      <td>
+        <%= total_correct_answer lesson %> / <%= total_word_in_lesson lesson %>
+      </td>
+    </tr>
+  </table>
+<% end %>

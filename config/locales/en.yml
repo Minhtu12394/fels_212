@@ -121,3 +121,8 @@ en:
   time:
     formats:
       date_month_year: "%H:%M:%S - %d/%m/%y"
+      date_month: "%d/%m/%y"
+  subject_monthly_report: "Monthly report"
+  content_mail_send_statistic: "Your exam statistic in this month "
+  hi: "Hi "
+

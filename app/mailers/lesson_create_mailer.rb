@@ -12,4 +12,10 @@ class LessonCreateMailer < ApplicationMailer
   def notify_all_user
     mail to: User.pluck(:email), subject: t(:subject_create_category)
   end
+
+  def send_statistic_to_user user
+    @user = user
+    @lessons = Lesson.start_by @user
+    mail to: @user.email, subject: t(:subject_monthly_report)
+  end
 end
