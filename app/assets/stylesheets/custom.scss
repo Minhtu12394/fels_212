@@ -182,7 +182,44 @@ input#option_not_learned {
 .form-control {
   margin-bottom: 10px;
 }
+
 .footer p {
   float: left;
   margin-left: 10px;
+}
+.card-body {
+  text-align: center;
+  width: 80%;
+}
+
+thead tr th {
+  text-align: center;
+}
+
+form#category_search {
+  display: -webkit-box;
+}
+
+input#q_name_cont {
+  margin-right: 10px;
+}
+
+.panel-heading {
+  height: 35px;
+}
+
+form#word_search {
+  display: -webkit-box;
+}
+
+input#q_content_cont {
+  margin-right: 10px;
+}
+
+form#user_search {
+  display: -webkit-box;
+}
+
+input#q_name_or_email_cont {
+  margin-right: 10px;
 }

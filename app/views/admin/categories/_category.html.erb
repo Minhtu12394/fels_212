@@ -3,9 +3,16 @@
     <td><%= create_index params[:page], index, Settings.cate_per_page %></td>
     <td><%= category.name %></td>
     <td>
-      <%= link_to t(:edit), edit_admin_category_path(category), class: "btn btn-primary" %>
-      <%= link_to t(:delete), admin_category_path(category), class: "btn btn-danger",
-        method: :delete, data: { confirm: t(:sure)}  %>
+      <%= link_to edit_admin_category_path(category), remote: true,
+        class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-edit" ></span>
+          <%= t :edit %>
+        <% end %>
+      <%= link_to admin_category_path(category), class: "btn btn-danger",
+        method: :delete, data: { confirm: t(:sure)} do %>
+          <span class="glyphicon glyphicon-remove"></span>
+          <%= t :delete %>
+        <% end %>
     </td>
   </tr>
 <% end %>

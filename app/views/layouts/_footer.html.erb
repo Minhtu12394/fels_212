@@ -1,5 +1,5 @@
 <footer class="footer">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.admin? %>
     <p>
       <%= t :last_sign_in %>
       <%= l current_user.last_sign_in_at, format: :date_month_year %>

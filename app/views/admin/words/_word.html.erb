@@ -4,9 +4,15 @@
     <td><%= word.content %></td>
     <td><%= word.category.name %></td>
     <td>
-      <%= link_to t(:edit), edit_admin_word_path(word), class: "btn btn-primary" %>
-      <%= link_to t(:delete), admin_word_path(word), class: "btn btn-danger",
-        method: :delete, data: { confirm: t(:sure)}  %>
+      <%= link_to edit_admin_word_path(word), remote: true , class: "btn btn-primary" do %>
+        <span class="glyphicon glyphicon-edit" ></span>
+          <%= t :edit %>
+      <% end %>
+      <%= link_to admin_word_path(word), class: "btn btn-danger",
+        method: :delete, data: { confirm: t(:sure)} do %>
+          <span class="glyphicon glyphicon-remove"></span>
+            <%= t :delete %>
+      <% end %>
     </td>
   </tr>
 <% end %>

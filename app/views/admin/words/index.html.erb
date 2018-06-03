@@ -7,12 +7,18 @@
       <%= search_form_for [:admin, @q] do |f| %>
         <%= f.text_field :content_cont, placeholder: t(:search_by_content),
           class: "form-control" %>
-        <%= f.submit t(:search), class: "btn btn-primary" %>
+        <%= button_tag type: "submit", class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-search"></span> <%= t :search %>
+        <% end %>
       <% end %>
     </div>
     <div class="col-md-8 col-md-offset-1">
     <br>
-    <%= link_to t(:create_word), new_admin_word_url, class: "btn btn-primary" %>
+    <%= link_to new_admin_word_url, remote: true, class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus-sign"></span>
+        <%= t :create_word %>
+      <% end %>
+      <div id="myModal"></div>
       <div class="card-body">
         <br>
         <div class="table-responsive">

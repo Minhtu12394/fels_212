@@ -9,6 +9,23 @@ class Admin::CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    respond_to do |format|
+      format.html do
+        flash[:warning] = "Template missing"
+        redirect_to admin_categories_path
+      end
+      format.js {render template: "admin/categories/modal.js.erb"}
+    end
+  end
+
+  def edit
+    respond_to do |format|
+      format.html do
+        flash[:warning] = "Template missing"
+        redirect_to admin_categories_path
+      end
+      format.js {render template: "admin/categories/modal.js.erb"}
+    end
   end
 
   def create
@@ -20,8 +37,9 @@ class Admin::CategoriesController < ApplicationController
     else
       @category = result.category
       flash[:danger] = t :create_cate_fail
-      render :new
+      redirect_to admin_categories_path
     end
+
   end
 
   def update
@@ -29,8 +47,8 @@ class Admin::CategoriesController < ApplicationController
       flash[:success] = t :update_cate_succ
       redirect_to admin_categories_path
     else
-      flash[:daner] =  t :update_cate_fail
-      render :edit
+      flash[:danger] =  t :update_cate_fail
+      redirect_to admin_categories_path
     end
   end
 

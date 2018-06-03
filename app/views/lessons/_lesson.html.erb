@@ -1,7 +1,7 @@
 <% @lessons.each_with_index do |lesson, index| %>
   <tr>
     <td><%= create_index params[:page], index, Settings.word_per_page %></td>
-    <td><%= lesson.created_at %></td>
+    <td><%= l lesson.created_at, format: :date_month_year %></td>
     <td><%= category_name lesson %></td>
     <td>
       <% if lesson.learned %>
@@ -17,9 +17,13 @@
     <td><%= count_correct_answer lesson %> / <%= total_word_in_lesson lesson %></td>
     <td>
       <% if lesson.learned %>
-        <%= link_to t(:view), lesson, class: "btn btn-primary" %>
+        <%= link_to lesson, class: "btn btn-primary" do %>
+          <i class="glyphicon glyphicon-eye-open"></i> <%= t :view %>
+        <% end %>
       <% else %>
-        <%= link_to t(:start), lesson, class: "btn btn-primary" %>
+        <%= link_to lesson, class: "btn btn-primary" do %>
+          <i class="glyphicon glyphicon-play"></i> <%= t :start %>
+        <% end %>
       <% end %>
     </td>
 <% end %>

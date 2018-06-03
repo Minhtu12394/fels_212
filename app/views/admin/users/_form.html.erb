@@ -1,12 +1,26 @@
-<%= form_for [:admin, @user] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %>
+<div class="modal fade" id="form_modal" role="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for [:admin, @user] do |f| %>
+        <div class="modal-header">
+          <h4 class="modal-title"><%= t :user %></h4>
+          <h4 class="modal-title text-center"></h4>
+        </div>
+        <div class="modal-body">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
 
-  <%= f.label :mail %>
-  <%= f.email_field :email, class: "form-control" %>
+          <%= f.label :mail %>
+          <%= f.email_field :email, class: "form-control" %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" %>
-  <br>
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

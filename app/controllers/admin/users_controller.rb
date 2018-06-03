@@ -3,14 +3,29 @@ class Admin::UsersController < ApplicationController
 
   def index
     @q = User.search params[:q]
-    @users = @q.result.order_by_email.page(params[:page]).
+    @users = @q.result.order_date_desc.page(params[:page]).
       per Settings.user_per_page
   end
 
-  def edit; end
+  def edit
+    respond_to do |format|
+      format.html do
+        flash[:warning] = "template not found"
+        redirect_to admin_users_path
+      end
+      format.js { render template: "admin/users/modal.js.erb" }
+    end
+  end
 
   def new
     @user = User.new
+    respond_to do |format|
+      format.html do
+        flash[:warning] = "template not found"
+        redirect_to admin_users_path
+      end
+      format.js { render template: "admin/users/modal.js.erb" }
+    end
   end
 
   def create
@@ -20,7 +35,7 @@ class Admin::UsersController < ApplicationController
       redirect_to admin_users_path
     else
       flash[:danger] = t :create_user_fail
-      render :new
+      redirect_to admin_users_path
     end
   end
 

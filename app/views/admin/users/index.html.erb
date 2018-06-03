@@ -6,12 +6,18 @@
     <div class="col-md-4 col-md-offset-1">
       <%= search_form_for [:admin, @q] do |f| %>
         <%= f.text_field :name_or_email_cont, placeholder: t(:search_by_name_or_email),class: "form-control" %>
-        <%= f.submit t(:search), class: "btn btn-primary" %>
+        <%= button_tag type: "submit", class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-search"></span> <%= t :search %>
+        <% end %>
       <% end %>
     </div>
     <div class="col-md-8 col-md-offset-1">
     <br>
-    <%= link_to t(:create_user), new_admin_user_url, class: "btn btn-primary" %>
+    <%= link_to new_admin_user_url, remote: true , class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus-sign"></span>
+        <%= t :create_user %>
+      <% end %>
+    <div id="myModal"></div>
       <div class="card-body">
         <br>
         <div class="table-responsive">

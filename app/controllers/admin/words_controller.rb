@@ -9,9 +9,22 @@ class Admin::WordsController < ApplicationController
 
   def new
     @word = Word.new
+      respond_to do |format|
+        format.html do
+          flash[:warning] = "Template not found"
+        end
+      format.js { render template: "admin/words/modal.js.erb"}
+    end
   end
 
-  def edit; end
+  def edit
+    respond_to do |format|
+      format.html do
+        flash[:warning] = "Template not found"
+      end
+      format.js { render template: "admin/words/modal.js.erb"}
+    end
+  end
 
   def create
     @word = Word.new word_params
@@ -19,9 +32,8 @@ class Admin::WordsController < ApplicationController
       flash[:success] =  t :successfully_created_word
       redirect_to admin_words_path
     else
-
       flash[:danger] = @word.errors.full_messages.join(", ")
-      render :new
+      redirect_to admin_words_path
     end
   end
 
@@ -31,7 +43,7 @@ class Admin::WordsController < ApplicationController
       redirect_to admin_words_path
     else
       flash[:danger] = @word.errors.full_messages.join(", ")
-      render :edit
+      redirect_to admin_words_path
     end
   end
 

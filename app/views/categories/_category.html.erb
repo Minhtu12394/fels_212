@@ -5,9 +5,13 @@
       </div>
       <div class="col-md-6"><%= category.description %></div>
       <div class="col-md-3">
-        <%= link_to t(:details), category, class: "btn btn-primary" %>
-        <%= link_to t(:start_lesson), category_lessons_path(category),
-          method: :post, class: "btn btn-primary" %>
+        <%= link_to category, class: "btn btn-primary" do %>
+          <i class="glyphicon glyphicon-list-alt"></i> <%= t :details %>
+        <% end %>
+        <%= link_to category_lessons_path(category),
+          method: :post, class: "btn btn-primary" do %>
+          <i class="glyphicon glyphicon-plus"></i> <%= t :start_lesson %>
+        <% end %>
       </div>
     </div>
   </div>
