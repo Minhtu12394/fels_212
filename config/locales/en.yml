@@ -116,3 +116,8 @@ en:
   click_to_view_detail: "Click to view detail"
   click_to_start: "Start lesson"
   subject_create_category: "Admin create new category"
+  last_sign_in: "Last sign in at: "
+  current_ip: "current ip: "
+  time:
+    formats:
+      date_month_year: "%H:%M:%S - %d/%m/%y"
